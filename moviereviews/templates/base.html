@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+        <style>
+            .navbar-logo {
+                width: 50px;
+                height: auto;
+                margin-right: 20px;
+            }
+        </style>
+    </head>
+
+    <body>
+        {% load static %}
+        <nav class="navbar navbar-expand-lg navbar-light bg-light mb-3">
+            <div class="container">
+                <a class="navbar-brand" href="{% url 'home' %}">
+                    <img src="{% static 'images/Movies.jpg' %}" alt="Logo" class="navbar-logo">
+                    Movies
+                </a>
+                <button class="navbar-toggler" type="button" data-bstoggle="collapse" data-bd-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav ms-auto">
+                        <a class="nav-link" href="{% url 'news' %}">News</a>
+                        <a class="nav-link" href="#">Login</a>
+                        <a class="nav-link" href="#">Sing up</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+            {% block content %}
+            {% endblock content %}
+        </div>
+    </body>
+</html>
